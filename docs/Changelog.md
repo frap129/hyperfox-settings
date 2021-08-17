@@ -107,3 +107,19 @@ defaultPref("security.tls.version.enable-deprecated", false); // default but hel
 ```
 // defaultPref("extensions.webextensions.base-content-security-policy", "default-src 'none'; script-src 'none'; object-src 'none';");
 ```
+
+## 1.6
+
+**target commit**:
+
+**base librewolf version**: 91.x
+
+**References**:
+- [reasoning on webgl2](https://github.com/arkenfox/user.js/commit/41c3c0ec26ef4392169fa1d04fd5783ac03bfc8e) from arkenfox's maintainer, basically disabling webgl is enough for those who don't need it. users who want it have one less pref to change.
+
+#### Removed preferences
+```
+defaultPref("dom.targetBlankNoOpener.enabled", true); // default since v79.0
+defaultPref("webgl.enable-webgl2", false);
+lockPref("browser.newtabpage.activity-stream.feeds.section.highlights", false); // default
+```
