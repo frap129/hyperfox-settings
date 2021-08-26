@@ -123,3 +123,135 @@ defaultPref("dom.targetBlankNoOpener.enabled", true); // default since v79.0
 defaultPref("webgl.enable-webgl2", false);
 lockPref("browser.newtabpage.activity-stream.feeds.section.highlights", false); // default
 ```
+
+## 2.0
+
+**References**:
+- [web content can no longer access the battery api](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580).
+- http alternative services are [isolated by network partitioning and FPI](https://github.com/arkenfox/user.js/blob/269cf965bd51022ca69823f8f66a8e402280d856/user.js#L1350) and they are unchanged even in tor browser. from a security standpoint, the alternate service will need to provide the certificate of the origin in order to be considered trusthworthy.
+- let the user decide what to manually clear, including the timespan.
+- drm prefs have been trimmed as a quality of life improvement. the end result is the same, with less hassle for users who want to access drm-protected content.
+- DNT header has been proved to not work and it is used to fingerprint.
+- VR access is behind a prompt and, despite being unlikely, it could be fingerprinted. with all this on the table it's just not worth and overkill.
+- vibrator API is so nieche that even tor does not change it. best to trim where possible.
+- `extensions.getAddons.link.url"` is showed only when no extension is installed and it's not a bad suggestion to get addons from addons.mozilla.org so we can remove it.
+- `browser.safebrowsing.downloads.remote.*` are all controlled by the 3 prefs already in the .cfg, which is the same approach taken by tor browser.
+- graphite [is no longer as concerning](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=firefox+graphite) and blocking it is likely fingerprintable.
+- the pdf prefs and the bookmark backup are not really relevant to librewolf.
+- as reported [here](https://bugzilla.mozilla.org/show_bug.cgi?id=1606624) the shared memory pref is no longer needed, so we can switch it back to default.
+
+**Notes**
+Recent changes in the category `MISC > set librewolf support and releases urls` require to create a couple header for the landing page page.
+
+#### Removed preferences
+```
+defaultPref("general.warnOnAboutConfig", false); // deprecated
+defaultPref("dom.battery.enabled", false);
+lockPref("network.http.altsvc.enabled", false);
+lockPref("network.http.altsvc.oe", false);
+lockPref("signon.storeWhenAutocompleteOff", false); // we do not suggest lockwise in the first place
+defaultPref("signon.management.page.breach-alerts.enabled", false); // no harm for lockwise users
+defaultPref("signon.management.page.breachAlertUrl", ""); // no harm for lockwise users
+defaultPref("privacy.history.custom", true); // redundant
+defaultPref("privacy.cpd.cookies", false);
+defaultPref("privacy.cpd.offlineApps", false); // default
+defaultPref("privacy.sanitize.timeSpan", 0);
+defaultPref("media.gmp-widevinecdm.visible", false);
+defaultPref("media.gmp-widevinecdm.enabled", false);
+defaultPref("privacy.donottrackheader.enabled", true);
+defaultPref("dom.vr.enabled", false);
+defaultPref("dom.vibrator.enabled", false);
+defaultPref("dom.push.connection.enabled", false); // redundant
+defaultPref("dom.security.https_only_mode_pbm", true); // redundant
+defaultPref("security.tls.version.fallback-limit", 3); // default is for, no need to enforce further
+lockPref("extensions.webextensions.identity.redirectDomain", ""); // outdated and unchanged even in tor
+defaultPref("extensions.getAddons.link.url", ""); // https://addons.mozilla.org/%LOCALE%/firefox/
+defaultPref("extensions.getAddons.get.url", ""); // redundant
+lockPref("extensions.getAddons.discovery.api_url", ""); // redundant
+lockPref("webextensions.storage.sync.serverURL", ""); // sync not supported
+lockPref("extensions.webservice.discoverURL", ""); // deprecated
+defaultPref("xpinstall.signatures.devInfoURL", ""); // link to wiki page
+lockPref("app.normandy.user_id", ""); // redundant
+lockPref("app.normandy.shieldLearnMoreUrl", ""); // redundant
+lockPref("security.mixed_content.block_active_content", true); // default
+defaultPref("security.insecure_connection_text.pbmode.enabled", true); // redundant
+lockPref("browser.safebrowsing.downloads.remote.block_dangerous", false);
+lockPref("browser.safebrowsing.downloads.remote.block_dangerous_host", false);
+lockPref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
+lockPref("browser.safebrowsing.downloads.remote.block_uncommon", false);
+lockPref("gfx.font_rendering.graphite.enabled", false); // consider removing
+defaultPref("pdfjs.previousHandler.alwaysAskBeforeHandling", true);
+defaultPref("pdfjs.enabledCache.state", false);
+lockPref("remote.enabled", false); // removed in FF90
+lockPref("browser.shell.didSkipDefaultBrowserCheckOnFirstRun", true); // redundant
+defaultPref("browser.bookmarks.max_backups", 2);
+defaultPref("devtools.performance.recording.ui-base-url", "http://localhost:55555"); // unharmful
+defaultPref("devtools.devices.url", ""); // unharmful
+lockPref("media.decoder-doctor.new-issue-endpoint", ""); // redundant
+lockPref("identity.sync.tokenserver.uri", ""); // redundant
+defaultPref("accessibility.support.url", ""); // redundant
+lockPref("browser.dictionaries.download.url", ""); // dictionaries are hidden already
+lockPref("browser.uitour.themeOrigin", ""); // redundant
+lockPref("toolkit.datacollection.infoURL", ""); // redundant
+lockPref("identity.mobilepromo.android", ""); // redundant
+lockPref("identity.mobilepromo.ios", ""); // redundant
+defaultPref("identity.sendtabpromo.url", ""); // redundant
+lockPref("datareporting.healthreport.infoURL", ""); // redundant
+lockPref("browser.chrome.errorReporter.infoURL", ""); // redundant
+lockPref("datareporting.policy.firstRunURL", ""); // redundant
+lockPref("javascript.options.shared_memory", false);
+lockPref("app.update.staging.enabled", false); // not relevant
+lockPref("app.update.lastUpdateTime.telemetry_modules_ping", 0); // redundant
+lockPref("network.connectivity-service.IPv6.url", "http://0.0.0.0"); // redundant
+lockPref("network.connectivity-service.IPv4.url", "http://0.0.0.0"); // redundant
+lockPref("network.connectivity-service.DNSv6.domain", ""); // redundant
+lockPref("network.connectivity-service.DNSv4.domain", ""); // redundant
+lockPref("browser.crashReports.unsubmittedCheck.enabled", false); // default
+lockPref("browser.crashReports.unsubmittedCheck.autoSubmit2", false); // default
+```
+
+#### Commented prefs
+```
+// pref("network.trr.mode", 2); // previously uncommented defaultPref with value 5 
+// pref("network.trr.uri", "https://dns.quad9.net/dns-query"); // previously uncommented defaultPref with empty value
+```
+
+#### Changed preferences
+previously empty, set to proper value
+```
+defaultPref("network.trr.confirmationNS", "skip");
+defaultPref("browser.search.searchEnginesURL", "https://gitlab.com/librewolf-community/settings/-/wikis/support#search");
+defaultPref("browser.geolocation.warning.infoURL", "https://gitlab.com/librewolf-community/settings/-/wikis/support#location");
+defaultPref("app.feedback.baseURL", "https://gitlab.com/librewolf-community/settings/-/wikis/support");
+defaultPref("app.releaseNotesURL", "https://gitlab.com/librewolf-community/browser");
+defaultPref("app.releaseNotesURL.aboutDialog", "https://gitlab.com/librewolf-community/browser");
+```
+
+#### Unlocked preferences
+```
+defaultPref("signon.rememberSignons", false);
+defaultPref("signon.autofillForms", false);
+defaultPref("signon.formlessCapture.enabled", false);
+defaultPref("browser.urlbar.speculativeConnect.enabled", false);
+defaultPref("browser.contentblocking.report.lockwise.enabled", false);
+defaultPref("browser.contentblocking.report.monitor.enabled", false);
+defaultPref("network.dns.disablePrefetch", true);
+defaultPref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
+defaultPref("browser.startup.blankWindow", false);
+defaultPref("extensions.htmlaboutaddons.recommendations.enabled", false);
+defaultPref("extensions.systemAddon.update.enabled", false);
+defaultPref("extensions.systemAddon.update.url", "");
+defaultPref("security.mixed_content.block_display_content", true);
+defaultPref("security.insecure_connection_text.enabled", true);
+defaultPref("gfx.font_rendering.opentype_svg.enabled", false);
+defaultPref("browser.shell.shortcutFavicons", false);
+defaultPref("network.gio.supported-protocols", "");
+defaultPref("network.IDN_show_punycode", true);
+defaultPref("browser.shell.checkDefaultBrowser", false);
+defaultPref("middlemouse.contentLoadURL", false);
+defaultPref("browser.pagethumbnails.capturing_disabled", true);
+defaultPref("browser.privatebrowsing.forceMediaMemoryCache", true);
+defaultPref("app.update.url.details", "https://gitlab.com/librewolf-community/browser");
+defaultPref("app.update.url.manual", "https://gitlab.com/librewolf-community/browser");
+defaultPref("network.protocol-handler.external.ms-windows-store", false);
+```
