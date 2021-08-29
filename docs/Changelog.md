@@ -165,6 +165,7 @@ defaultPref("browser.newtab.preload", false);
 defaultPref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
 defaultPref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
 defaultPref("browser.newtabpage.activity-stream.feeds.topsites", false);
+defaultPref("browser.safebrowsing.downloads.enabled", false);
 ```
 
 ## 1.6
