@@ -19,6 +19,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 - new tab page section now includes a new design and no longer an empty page. all the unnecessary preferences have been removed and users can also customize as the most essential ones have been unlocked.
 - UI bug in tracking protection section is fixed.
 - a bunch of dead links are fixed.
+- for screensharing see [testing provided at this link](https://github.com/arkenfox/user.js/issues/1245)
 
 **Notes**
 Recent changes in the category `MISC > set librewolf support and releases urls` require to create a couple header for the landing page page.
@@ -104,6 +105,9 @@ lockPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcut
 defaultPref("dom.push.userAgentID", ""); // push notifications are already disabled
 lockPref("services.settings.server", ""); // redundant with patches
 lockPref("webchannel.allowObject.urlWhitelist", ""); // deprecated
+defaultPref("media.getusermedia.browser.enabled", false);
+defaultPref("media.getusermedia.screensharing.enabled", false);
+defaultPref("media.getusermedia.audiocapture.enabled", false);
 ```
 
 #### Added preferences
