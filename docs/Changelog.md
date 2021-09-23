@@ -12,7 +12,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 - VR access is behind a prompt and, despite being unlikely, it could be fingerprinted. with all this on the table it's just not worth and overkill.
 - vibrator API is so nieche that even tor does not change it. best to trim where possible.
 - `extensions.getAddons.link.url"` is showed only when no extension is installed and it's not a bad suggestion to get addons from addons.mozilla.org so we can remove it.
-- `browser.safebrowsing.downloads.remote.*` are all controlled by the 3 prefs already in the .cfg, which is the same approach taken by tor browser.
+- `browser.safebrowsing.downloads.remote.*` are all controlled by the prefs already in the .cfg, which is the same approach taken by tor browser.
 - graphite [is no longer as concerning](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=firefox+graphite) and blocking it is likely fingerprintable.
 - the pdf prefs and the bookmark backup are not really relevant to librewolf.
 - as reported [here](https://bugzilla.mozilla.org/show_bug.cgi?id=1606624) the shared memory pref is no longer needed, so we can switch it back to default.
@@ -108,6 +108,7 @@ lockPref("webchannel.allowObject.urlWhitelist", ""); // deprecated
 defaultPref("media.getusermedia.browser.enabled", false);
 defaultPref("media.getusermedia.screensharing.enabled", false);
 defaultPref("media.getusermedia.audiocapture.enabled", false);
+defaultPref("dom.storage.next_gen", true); // default from v92.0
 ```
 
 #### Added preferences
