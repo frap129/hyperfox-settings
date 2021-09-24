@@ -20,9 +20,10 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 - UI bug in tracking protection section is fixed.
 - a bunch of dead links are fixed.
 - for screensharing see [testing provided at this link](https://github.com/arkenfox/user.js/issues/1245)
+- disable new firefox suggests feature
 
 **Notes**
-Recent changes in the category `MISC > set librewolf support and releases urls` require to create a couple header for the landing page page.
+Recent changes in the category `MISC > set librewolf support and releases urls` require to create a couple header for the landing page.
 
 #### Removed preferences
 ```
@@ -116,6 +117,7 @@ defaultPref("dom.storage.next_gen", true); // default from v92.0
 defaultPref("browser.download.useDownloadDir", false); // force user interaction on downloads, by always asking location
 // defaultPref("security.remote_settings.crlite_filters.enabled", true);
 // defaultPref("security.pki.crlite_mode", 2);
+defaultPref("browser.urlbar.quicksuggest.enabled", false); // disable firefox suggests and hide its UI
 ```
 
 #### Commented prefs
