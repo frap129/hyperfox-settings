@@ -117,7 +117,7 @@ defaultPref("dom.storage.next_gen", true); // default from v92.0
 defaultPref("browser.download.useDownloadDir", false); // force user interaction on downloads, by always asking location
 // defaultPref("security.remote_settings.crlite_filters.enabled", true);
 // defaultPref("security.pki.crlite_mode", 2);
-defaultPref("browser.urlbar.quicksuggest.enabled", false); // disable firefox suggests and hide its UI
+pref("browser.urlbar.quicksuggest.scenario", ""); // disable firefox suggests and hide its UI
 ```
 
 #### Commented prefs
