@@ -1,7 +1,47 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+## 3.0
+
+**target commit**:
+
+**base librewolf version**: 94.x
+
+**References**:
+- as reported in #95 and discussed [here](https://gitlab.com/librewolf-community/browser/linux/-/issues/246) we are re-enabling TP by default, setting it to strict.
+- the sponsored shortcuts in about:preferences#home were already locked, now they are properly hidden.
+
+**Notes**: all the removed preferences were either related to disabling TP, or unecessary when using strict mode. as a result of this trimming the tracking protection section of the .cfg file doesn't need to exist anymore.
+
+#### Added preferences
+```
+defaultPref("browser.topsites.useRemoteSetting", false); // hide sponsored shortcuts button from about:preferences#home
+defaultPref("privacy.resistFingerprinting.letterboxing", false); // expose hidden letterboxing pref, but do not enable by default
+```
+
+#### Removed preferences
+```
+lockPref("privacy.trackingprotection.enabled", false);
+lockPref("privacy.trackingprotection.pbmode.enabled", false);
+lockPref("privacy.trackingprotection.annotate_channels", false);
+defaultPref("browser.safebrowsing.provider.mozilla.updateURL", "");
+defaultPref("browser.safebrowsing.provider.mozilla.gethashURL", "");
+defaultPref("privacy.trackingprotection.cryptomining.enabled", false);
+defaultPref("privacy.trackingprotection.fingerprinting.enabled", false);
+defaultPref("browser.contentblocking.cryptomining.preferences.ui.enabled", false);
+defaultPref("browser.contentblocking.fingerprinting.preferences.ui.enabled", false);
+```
+
+#### Changed preferences
+```
+pref("browser.contentblocking.category", "strict");
+```
+
 ## 2.0
+
+**target commit**: from 6451faa167568313e5ed065fcb3ee2bb76132063 to b17a1ed657e22ac61b4399699223d36724b842e7
+
+**base librewolf version**: 92.x
 
 **References**:
 - [web content can no longer access the battery api](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580).
@@ -120,7 +160,7 @@ defaultPref("browser.download.useDownloadDir", false); // force user interaction
 pref("browser.urlbar.quicksuggest.scenario", ""); // disable firefox suggests and hide its UI
 ```
 
-#### Commented prefs
+#### Commented preferences
 ```
 // pref("network.trr.mode", 2); // previously uncommented defaultPref with value 5 
 // pref("network.trr.uri", "https://dns.quad9.net/dns-query"); // previously uncommented defaultPref with empty value
@@ -173,7 +213,7 @@ defaultPref("browser.safebrowsing.downloads.enabled", false);
 
 ## 1.6
 
-**target commit**:
+**target commit**: 192f51abe21e9aeb9b01d396079e9b8533cab7bb
 
 **base librewolf version**: 91.x
 
