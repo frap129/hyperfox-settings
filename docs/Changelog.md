@@ -3,13 +3,14 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 ## 3.0
 
-**target commit**:
+**target commit**: f0a2d5d70657cc87348282d6faaf72edff8bf304 and 4e0895a299ec99066f119d8ce1a2923fc91aa465
 
 **base librewolf version**: 94.x
 
 **References**:
 - as reported in #95 and discussed [here](https://gitlab.com/librewolf-community/browser/linux/-/issues/246) we are re-enabling TP by default, setting it to strict.
 - the sponsored shortcuts in about:preferences#home were already locked, now they are properly hidden.
+- enable fission as it is being [rolled out to stable](https://bugzilla.mozilla.org/show_bug.cgi?id=1732206).
 
 **Notes**: all the removed preferences were either related to disabling TP, or unecessary when using strict mode. as a result of this trimming the tracking protection section of the .cfg file doesn't need to exist anymore.
 
@@ -17,6 +18,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 ```
 defaultPref("browser.topsites.useRemoteSetting", false); // hide sponsored shortcuts button from about:preferences#home
 defaultPref("privacy.resistFingerprinting.letterboxing", false); // expose hidden letterboxing pref, but do not enable by default
+defaultPref("fission.autostart", true); // enable fission by default
 ```
 
 #### Removed preferences
