@@ -1,9 +1,34 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-## 3.1
+## 3.2
 
 **target commit**:
+
+**base librewolf version**: 94.x
+
+**References**:
+- block the new firefox suggests feature in full.
+- enforce a sane value for manual sanitizing.
+
+**Notes**: 
+
+#### Added preferences
+```
+lockPref("browser.urlbar.quicksuggest.enabled", "false"); // disable suggest and hide its ui
+lockPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); // disable suggestions from firefox
+lockPref("browser.urlbar.suggest.quicksuggest.sponsored", false); // disable sponsored suggestions
+lockPref("browser.urlbar.quicksuggest.dataCollection.enabled", false); // default
+defaultPref("privacy.sanitize.timeSpan", 0);
+```
+#### Changed preferences
+```
+lockPref("browser.urlbar.quicksuggest.scenario", "history"); // prevent opt-in, doesn't work alone
+```
+
+## 3.1
+
+**target commit**: 6844d4ad1c9ad8bb3ffdc29e0a607c21c0559da4 and 67e6a00b719ecd52782a724cd09a9f08fa4577c0
 
 **base librewolf version**: 94.x
 
