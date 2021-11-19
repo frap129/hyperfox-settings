@@ -15,7 +15,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 #### Added preferences
 ```
-lockPref("browser.urlbar.quicksuggest.enabled", "false"); // disable suggest and hide its ui
+lockPref("browser.urlbar.quicksuggest.enabled", false); // disable suggest and hide its ui
 lockPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); // disable suggestions from firefox
 lockPref("browser.urlbar.suggest.quicksuggest.sponsored", false); // disable sponsored suggestions
 lockPref("browser.urlbar.quicksuggest.dataCollection.enabled", false); // default
