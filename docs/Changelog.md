@@ -3,7 +3,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 ## 3.2
 
-**target commit**:
+**target commit**: 19e59813ed483de7ffc8a219da96eb18a942eb01
 
 **base librewolf version**: 94.x
 
@@ -11,7 +11,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 - block the new firefox suggests feature in full.
 - enforce a sane value for manual sanitizing.
 
-**Notes**: 
+**Notes**: the suggest prefs might be overkill, we should try to trim to the bare minimum in the next release.
 
 #### Added preferences
 ```
