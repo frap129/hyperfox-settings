@@ -1,6 +1,42 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+## 3.1
+
+**target commit**:
+
+**base librewolf version**: 94.x
+
+**References**:
+- the added prefs are all defense in depth.
+- `drawInTitlebar` was causing errors for some users, the bug was reproduced. Linux users might experience a different toolbar behavior because of this change.
+- the default value for scopes seems like a better choice than changing it.
+- `offlineApps` can be safely cleared without using logins, in fact it was most likely cleared by other sanitazion techniques regardless.
+
+**Notes**: please notify users about the new website, thanks to @maltejur for helping with the migration.
+
+#### Added preferences
+```
+defaultPref("webchannel.allowObject.urlWhitelist", ""); // remove webchannel whitelist
+lockPref("toolkit.telemetry.coverage.opt-out", true); // hidden
+defaultPref("privacy.cpd.offlineApps", true); // for consistency with clearOnShutdown prefs
+```
+
+#### Removed preferences
+```
+defaultPref("extensions.autoDisableScopes", 11); // bring back to default
+defaultPref("browser.tabs.drawInTitlebar", true); // bring back to default
+```
+
+#### Changed preferences
+```
+defaultPref("privacy.clearOnShutdown.offlineApps", true); // can be cleared
+defaultPref("app.support.baseURL", "https://librewolf.net/docs/faq/#");
+defaultPref("browser.search.searchEnginesURL", "https://librewolf.net/docs/faq/#how-do-i-add-a-search-engine");
+defaultPref("browser.geolocation.warning.infoURL", "https://librewolf.net/docs/faq/#how-do-i-enable-location-aware-browsing");
+defaultPref("app.feedback.baseURL", "https://librewolf.net/#questions");
+```
+
 ## 3.0
 
 **target commit**: f0a2d5d70657cc87348282d6faaf72edff8bf304 and 4e0895a299ec99066f119d8ce1a2923fc91aa465
