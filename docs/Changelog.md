@@ -3,7 +3,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 ## 4.0
 
-**target commit**: 9003f029f8fe087cde5bb081d51ab82340948874
+**target commit**:
 
 **base librewolf version**: 95.x
 
