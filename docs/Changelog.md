@@ -1,6 +1,42 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+## 4.0
+
+**target commit**:
+
+**base librewolf version**: 95.x
+
+**References**:
+- [review webrtc](https://gitlab.com/librewolf-community/settings/-/issues/108).
+- [stop disabling geo api](https://gitlab.com/librewolf-community/settings/-/issues/102).
+- [deprecate RFP dark mode](https://gitlab.com/librewolf-community/browser/common/-/issues/56).
+- `offlineApps` change in 3.1 did not respect exceptions, so revert it.
+- uncomment prefs to enable CRL without OCSP fallback, although they will fully work only when [this issue is closed](https://gitlab.com/librewolf-community/browser/common/-/issues/57).
+- we decided to force a larger new window size by default, to improve usability for RFP users while still keeping a rounded value. see [this comment](https://gitlab.com/librewolf-community/settings/-/issues/104#note_752186737).
+
+#### Added preferences
+```
+defaultPref("privacy.window.maxInnerWidth", 1600);
+defaultPref("privacy.window.maxInnerHeight", 900);
+```
+
+#### Removed preferences
+```
+defaultPref("media.peerconnection.enabled", false);
+lockPref("privacy.override_rfp_for_color_scheme", false);
+defaultPref("geo.enabled", false);
+defaultPref("permissions.default.geo", 2);
+defaultPref("privacy.clearOnShutdown.offlineApps", true);
+defaultPref("privacy.cpd.offlineApps", true);
+```
+
+#### Changed preferences
+```
+defaultPref("security.remote_settings.crlite_filters.enabled", true);
+defaultPref("security.pki.crlite_mode", 2);
+```
+
 ## 3.2
 
 **target commit**: 19e59813ed483de7ffc8a219da96eb18a942eb01
@@ -396,4 +432,5 @@ lockPref("privacy.override_rfp_for_color_scheme", false);
 
 **base librewolf version**: 89.x
 
-This is the initial release from which we start tagging and versioning settings.
+This is the initial release from which we start tagging and versioning settings. For previous changes see 
+[here](https://gitlab.com/librewolf-community/settings/-/blob/master/docs/changelog-legacy.md).
