@@ -1,6 +1,36 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+## 5.0
+
+**target commit**: from 8a98176400e2e44ae1138ea8bdc1991250f75b8e to b219a75b4a0d72b519ce386406f45acead940c9a
+
+**base librewolf version**: 96.x
+
+**References**:
+- [extension auto-updates](https://gitlab.com/librewolf-community/settings/-/issues/116)
+- [remove all the OS specific prefs](https://gitlab.com/librewolf-community/settings/-/issues/124)
+- [service workers and push](https://gitlab.com/librewolf-community/settings/-/issues/115)
+
+#### Added preferences
+```
+defaultPref("privacy.partition.serviceWorkers", true); // isolate service workers
+```
+
+#### Removed preferences
+```
+defaultPref("extensions.update.enabled", false); // disable automatic checks for extension updates
+defaultPref("extensions.update.autoUpdateDefault", false); // disable automatic installs of extension updates
+defaultPref("browser.tabs.loadBookmarksInTabs", true);
+defaultPref("clipboard.autocopy", false);
+defaultPref("dom.popup_maximum", 4);
+defaultPref("general.autoScroll", false);
+defaultPref("devtools.selfxss.count", 0); // was set because of https://gitlab.com/librewolf-community/browser/linux/-/issues/80
+defaultPref("dom.push.enabled", false); // disable push notifications
+defaultPref("dom.push.serverURL", ""); // default "wss://push.services.mozilla.com/"
+defaultPref("dom.serviceWorkers.enabled", false); // disable service workers, must enable for push notifications
+```
+
 ## 4.0
 
 **target commit**: 9003f029f8fe087cde5bb081d51ab82340948874
