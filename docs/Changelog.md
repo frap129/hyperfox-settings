@@ -18,6 +18,7 @@ pref("intl.accept_languages", "en-US, en");
 #### Removed preferences
 ```
 defaultPref("intl.locale.requested", "en-US");
+defaultPref("privacy.spoof_english", 2);
 defaultPref("browser.search.region", "US"); // set a default search region for all users
 defaultPref("extensions.getAddons.langpacks.url", ""); // prevent users from adding lang packs, which would cause leaks
 ```
