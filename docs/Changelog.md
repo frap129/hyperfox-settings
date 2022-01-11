@@ -1,6 +1,32 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+## 5.1
+
+**target commit**:
+
+**base librewolf version**: 96.x
+
+**References**:
+- [fix language issue](https://gitlab.com/librewolf-community/settings/-/issues/125)
+
+#### Added preferences
+```
+pref("intl.accept_languages", "en-US, en");
+```
+
+#### Removed preferences
+```
+defaultPref("intl.locale.requested", "en-US");
+defaultPref("browser.search.region", "US"); // set a default search region for all users
+defaultPref("extensions.getAddons.langpacks.url", ""); // prevent users from adding lang packs, which would cause leaks
+```
+
+#### Changed preferences
+```
+pref("javascript.use_us_english_locale", true);
+```
+
 ## 5.0
 
 **target commit**: from 8a98176400e2e44ae1138ea8bdc1991250f75b8e to b219a75b4a0d72b519ce386406f45acead940c9a
