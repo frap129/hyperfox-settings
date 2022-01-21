@@ -1,9 +1,23 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+## 5.2
+
+**target commit**: f3b4414d30953d1ea3eb64a9d75c62c242ee991b
+
+**base librewolf version**: 96.x
+
+**References**:
+- [fix console issue](https://gitlab.com/librewolf-community/settings/-/issues/129)
+
+#### Added preferences
+```
+defaultPref("devtools.selfxss.count", 0);
+```
+
 ## 5.1
 
-**target commit**:
+**target commit**: f28b218e97acec8935c0c868863a9f4b6a061a39 and 60221803c46bf5cf2cbc5d77035927f9fd249e6a
 
 **base librewolf version**: 96.x
 
