@@ -1,6 +1,24 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+## 5.3
+
+**target commit**:
+
+**base librewolf version**: 96.x
+
+**References**:
+- [disable sync differently](https://gitlab.com/librewolf-community/settings/-/issues/132);
+- [remove tracking query params](https://gitlab.com/librewolf-community/settings/-/issues/128);
+
+
+#### Added preferences
+```
+defaultPref("identity.fxaccounts.enabled", false); // sync and firefox account
+defaultPref("privacy.query_stripping.enabled", true);
+defaultPref("privacy.query_stripping.strip_list", "__hsfp __hssc __hstc __s _hsenc _openstat dclid fbclid gclid hsCtaTracking igshid mc_eid ml_subscriber ml_subscriber_hash msclkid oly_anon_id oly_enc_id rb_clickid s_cid vero_conv vero_id wickedid yclid");
+```
+
 ## 5.2
 
 **target commit**: f3b4414d30953d1ea3eb64a9d75c62c242ee991b
