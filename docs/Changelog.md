@@ -1,9 +1,29 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-## 5.3
+## 5.4
 
 **target commit**:
+
+**base librewolf version**: 96.x
+
+**References**:
+- [serve custom uBO assets](https://gitlab.com/librewolf-community/settings/-/issues/134)
+
+
+#### Added preferences
+```
+defaultPref("librewolf.uBO.assetsBootstrapLocation", "https://gitlab.com/librewolf-community/browser/source/-/raw/main/assets/uBOAssets.json");
+```
+
+#### Changed preferences
+```
+defaultPref("privacy.query_stripping.strip_list", "__hsfp __hssc __hstc __s _hsenc _openstat dclid fbclid gbraid gclid hsCtaTracking igshid mc_eid ml_subscriber ml_subscriber_hash msclkid oly_anon_id oly_enc_id rb_clickid s_cid twclid vero_conv vero_id wbraid wickedid yclid");
+```
+
+## 5.3
+
+**target commit**: c256656f377d3c15a8c7537c65f45dc802904df7
 
 **base librewolf version**: 96.x
 
