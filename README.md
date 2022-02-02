@@ -8,7 +8,7 @@ we encourage users to find **their own setup** and to use our default configurat
 - [website](https://librewolf.net/): read the docs.
 - [faq](https://librewolf.net/docs/faq/): for any question you might have, and to help you creating your own pref file.
 - [all releases](https://gitlab.com/librewolf-community/browser).
-- [issue tracker](https://gitlab.com/librewolf-community/settings/-/issues).
+- [issue tracker](https://gitlab.com/librewolf-community/settings/-/issues). issues that have the `provide info` label need user input or they will be quarantined after a week, and closed after ten days.
 - find us on [gitter](https://gitter.im/librewolf-community/librewolf) / [matrix](https://matrix.to/#/#librewolf:matrix.org) / [reddit](https://www.reddit.com/r/LibreWolf/) / [lemmy](https://lemmy.ml/c/librewolf).
 
 ## Notes and thanks
