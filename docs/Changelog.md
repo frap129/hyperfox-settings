@@ -1,6 +1,37 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+# 5.5
+
+**target commit**:
+
+**base librewolf version**: 97.x
+
+**References**:
+- showing the insecure connection text is redundant as there's already the lock UI for http websites.
+- `browser.places.speculativeConnect.enabled` controls speculative connections for bookmarks and will be fully effective only once we hit v98.
+- we will no longer disable history but we'll clear it on close. [reasoning](https://gitlab.com/librewolf-community/settings/-/issues/135).
+- [download annoyances](https://gitlab.com/librewolf-community/settings/-/issues/144).
+
+**Notes**: the settings have been re-organized and they should also be documented a bit better now.
+
+#### Removed preferences
+```
+defaultPref("security.insecure_connection_text.enabled", true); // display http websites as insecure in the ui
+defaultPref("places.history.enabled", true);
+```
+
+#### Added preferences
+```
+defaultPref("browser.places.speculativeConnect.enabled", false);
+defaultPref("browser.download.alwaysOpenPanel", false); // do not expand toolbar menu for every download, we already have enough interaction
+```
+
+#### Changed preferences
+```
+pref("security.tls.version.enable-deprecated", false); // make TLS downgrades session only by enforcing it with pref()
+```
+
 ## 5.4
 
 **target commit**:
