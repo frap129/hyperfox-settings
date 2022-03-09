@@ -1,9 +1,48 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 5.5
+# 6.0
 
 **target commit**:
+
+**base librewolf version**: 98.x
+
+**References**:
+- we are going to force history to custom mode and hide the UI for always on PB mode, a bunch of pointers are collected in [this MR](https://gitlab.com/librewolf-community/browser/source/-/merge_requests/21).
+- [handlers prefs are deprecated](https://bugzilla.mozilla.org/show_bug.cgi?id=1733497).
+- for OCSP see [this issue](https://gitlab.com/librewolf-community/settings/-/issues/150).
+
+#### Added preferences
+```
+pref("privacy.history.custom", true);
+pref("browser.privatebrowsing.autostart", false);
+defaultPref("browser.preferences.moreFromMozilla", false); // hide about:preferences#moreFromMozilla
+defaultPref("security.OCSP.require", true); // set to hard-fail
+```
+
+#### Removed preferences
+```
+/** [SECTION] HANDLERS
+ * remove the default handlers for several tipe of files and services.
+ */
+lockPref("gecko.handlerService.schemes.mailto.0.uriTemplate", "");
+lockPref("gecko.handlerService.schemes.mailto.0.name", "");
+lockPref("gecko.handlerService.schemes.mailto.1.uriTemplate", "");
+lockPref("gecko.handlerService.schemes.mailto.1.name", "");
+lockPref("gecko.handlerService.schemes.irc.0.uriTemplate", "");
+lockPref("gecko.handlerService.schemes.irc.0.name", "");
+lockPref("gecko.handlerService.schemes.ircs.0.uriTemplate", "");
+lockPref("gecko.handlerService.schemes.ircs.0.name", "");
+```
+
+#### Changed preferences
+```
+defaultPref("security.OCSP.enabled", 1);
+```
+
+# 5.5
+
+**target commit**: 0fc1ff53c99379d9d4625de65ea51287d57a0a3a
 
 **base librewolf version**: 97.x
 
