@@ -1,9 +1,42 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 6.0
+# 6.1
 
 **target commit**:
+
+**base librewolf version**: 99.x
+
+**References**:
+- csp pref has been deprecated.
+- quicksuggest prefs are redundant as it has a master switch. the master switch is now force applied on each restart of the browser.
+- do not whitelist offscreencanvas for now, we need to first check how it is tied to the "normal" canvas.
+
+**Notes**: using the vpn pref should allow us to get rid of one patch.
+
+#### Added preferences
+```
+lockPref("browser.vpn_promo.enabled", true);
+defaultPref("gfx.offscreencanvas.domain-enabled", false);
+```
+
+#### Removed preferences
+```
+lockPref("security.csp.enable", true); // enforce csp, default
+lockPref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
+lockPref("browser.urlbar.suggest.quicksuggest.sponsored", false);
+lockPref("browser.urlbar.quicksuggest.dataCollection.enabled", false); // default
+lockPref("browser.urlbar.quicksuggest.scenario", "history");
+```
+
+#### Changed preferences
+```
+pref("browser.urlbar.quicksuggest.enabled", false);
+```
+
+# 6.0
+
+**target commit**: 0822d491d2b377b5cd7f0429cee5aa916538fa50
 
 **base librewolf version**: 98.x
 
