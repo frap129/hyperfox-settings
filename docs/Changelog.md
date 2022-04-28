@@ -1,6 +1,15 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+# 6.2.1
+
+**target commit**:
+
+**base librewolf version**: 99.x
+
+**References**:
+- Fixes the uBlock Origin installation URL
+
 # 6.2
 
 **target commit**:
