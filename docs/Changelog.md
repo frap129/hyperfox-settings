@@ -1,7 +1,7 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 6.2.1
+# 6.3
 
 **target commit**:
 
@@ -18,7 +18,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 **References**:
 - vpn pref was set to the wrong value by mistake.
-- offscreancanvas cannot be read back using JS, plus it is being tracked upstreadm. see [this comment](https://github.com/arkenfox/user.js/issues/1418#issuecomment-1093390017), which solves doubts from 6.1 changelog.
+- offscreencanvas cannot be read back using JS, plus it is being tracked upstream. see [this comment](https://github.com/arkenfox/user.js/issues/1418#issuecomment-1093390017), which solves doubts from 6.1 changelog.
 
 #### Removed preferences
 ```
