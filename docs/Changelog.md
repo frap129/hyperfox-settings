@@ -3,13 +3,13 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 # 6.4
 
-**target commit**:
+**target commit**: eea09ca07333dc166213fa9c873e4916d979e97f
 
 **base librewolf version**: 100.x
 
 **References**:
 - hide Firefox Focus promo in private tabs.
-- double checking revoked certificates with both CRL and OCSP allows to detect false positives and it is also [the default](https://hg.mozilla.org/mozilla-central/rev/a6ba7b4ee17].
+- double checking revoked certificates with both CRL and OCSP allows to detect false positives and it is also [the default](https://hg.mozilla.org/mozilla-central/rev/a6ba7b4ee17).
 - [clearOnShutdown prefs now respect exceptions](https://github.com/arkenfox/user.js/issues/1441) so we can tick all boxes in that UI as well.
 
 #### Added preferences
