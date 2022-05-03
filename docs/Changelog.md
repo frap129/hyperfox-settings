@@ -1,9 +1,36 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 6.3
+# 6.4
 
 **target commit**:
+
+**base librewolf version**: 100.x
+
+**References**:
+- hide Firefox Focus promo in private tabs.
+- double checking revoked certificates with both CRL and OCSP allows to detect false positives and it is also [the default](https://hg.mozilla.org/mozilla-central/rev/a6ba7b4ee17].
+- [clearOnShutdown prefs now respect exceptions](https://github.com/arkenfox/user.js/issues/1441) so we can tick all boxes in that UI as well.
+
+#### Added preferences
+```
+lockPref("browser.promo.focus.enabled", false);
+defaultPref("privacy.clearOnShutdown.offlineApps", true);
+```
+
+#### Changed preferences
+```
+defaultPref("security.pki.crlite_mode", 3); // prev 2
+```
+
+#### Removed preferences
+```
+defaultPref("privacy.clearOnShutdown.cookies", false);
+```
+
+# 6.3
+
+**target commit**: e84fc950bfd7c3542cb974e9d545b9b8e18c010d
 
 **base librewolf version**: 99.x
 
@@ -12,7 +39,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 # 6.2
 
-**target commit**:
+**target commit**: ac95f5195ed82ca6bcec48acf9d1241e3c683b25
 
 **base librewolf version**: 99.x
 
