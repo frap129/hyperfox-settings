@@ -3,6 +3,9 @@
 <!--
 
 if you ignore the pre-requisites and the template the issue might be closed.
+issues that have the `provide info` label need user input or they will be quarantined after a week,
+and closed after ten days.
+
 suggestions are appreciated in the form of merge requests or alternatively well documented issues.
 
 make sure you are in the right repository:
