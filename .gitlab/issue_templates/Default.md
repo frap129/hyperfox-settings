@@ -13,7 +13,7 @@ https://librewolf.net/docs/faq/#i-have-a-problem-where-do-i-open-a-new-issue
 
 -->
 
-- [ ] I've read and followed the [contribution guidelines](https://librewolf.net/docs/faq/#do-you-have-any-contribution-guidelines)
+- [ ] I've read and followed the [contribution guidelines](https://librewolf.net/docs/faq/#do-you-have-any-contribution-guidelines);
 - [ ] I've reproduced the issue in a new LibreWolf profile;
 - [ ] I've checked that the problem is not present in a stock Firefox profile;
 
