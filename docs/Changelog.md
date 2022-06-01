@@ -1,6 +1,26 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+# 6.5
+
+**target commit**: 
+
+**base librewolf version**: 101.x
+
+**References**:
+- query stripping is now [part of strict mode](https://hg.mozilla.org/mozilla-central/rev/9d9425eb1ded).
+- session cookie prefs are useless given that we sanitize on close, [more details at arkenfox](https://github.com/arkenfox/user.js/pull/1443/commits/3207478033fefc19e933dab4eef6445125341ec4).
+- fission has been a default for the longest now.
+
+
+#### Removed preferences
+```
+defaultPref("privacy.query_stripping.enabled", true);
+defaultPref("network.cookie.thirdparty.sessionOnly", true);
+defaultPref("network.cookie.thirdparty.nonsecureSessionOnly", true);
+defaultPref("fission.autostart", true);
+```
+
 # 6.4
 
 **target commit**: eea09ca07333dc166213fa9c873e4916d979e97f
