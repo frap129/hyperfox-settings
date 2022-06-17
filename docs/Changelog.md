@@ -1,9 +1,34 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 6.5
+# 6.6
 
 **target commit**: 
+
+**base librewolf version**: 102.x
+
+**References**:
+- sha1 certificates: https://bugzilla.mozilla.org/1767489 and https://bugzilla.mozilla.org/1766687.
+- trimming only applies to http websites so it's very minimal.
+- crlite: https://bugzilla.mozilla.org/show_bug.cgi?id=1773371, we can stick to default 3 till v103, then the value will be changed to 2 which is the best possible if mozilla feels like it's ready usability wise.
+- add more entries to the native query stripping list, to [get in line with brave](https://github.com/brave/brave-core/blob/master/browser/net/brave_site_hacks_network_delegate_helper.cc).
+
+#### Removed preferences
+```
+defaultPref("security.pki.sha1_enforcement_level", 1); // default
+defaultPref("browser.urlbar.trimURLs", false);
+defaultPref("security.pki.crlite_mode", 3); // default
+defaultPref("security.OCSP.enabled", 1); // default
+```
+
+#### Changed preferences
+```
+defaultPref("privacy.query_stripping.strip_list", "__hsfp __hssc __hstc __s _hsenc _openstat dclid fbclid gbraid gclid hsCtaTracking igshid mc_eid ml_subscriber ml_subscriber_hash msclkid oft_c oft_ck oft_d oft_id oft_ids oft_k oft_lk oft_sk oly_anon_id oly_enc_id rb_clickid s_cid twclid vero_conv vero_id wbraid wickedid yclid");
+```
+
+# 6.5
+
+**target commit**: b10dcbdd84e63787c4f2f6d34d41724b437df5be
 
 **base librewolf version**: 101.x
 
@@ -11,7 +36,6 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 - query stripping is now [part of strict mode](https://hg.mozilla.org/mozilla-central/rev/9d9425eb1ded).
 - session cookie prefs are useless given that we sanitize on close, [more details at arkenfox](https://github.com/arkenfox/user.js/pull/1443/commits/3207478033fefc19e933dab4eef6445125341ec4).
 - fission has been a default for the longest now.
-
 
 #### Removed preferences
 ```
