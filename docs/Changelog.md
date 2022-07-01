@@ -3,7 +3,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 # 6.6
 
-**target commit**: 
+**target commit**:
 
 **base librewolf version**: 102.x
 
@@ -12,6 +12,12 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 - trimming only applies to http websites so it's very minimal.
 - crlite: https://bugzilla.mozilla.org/show_bug.cgi?id=1773371, we can stick to default 3 till v103, then the value will be changed to 2 which is the best possible if mozilla feels like it's ready usability wise.
 - add more entries to the native query stripping list, to [get in line with brave](https://github.com/brave/brave-core/blob/master/browser/net/brave_site_hacks_network_delegate_helper.cc).
+- `services.settings.server` can now be used as a pref, see: https://gitlab.com/librewolf-community/browser/source/-/merge_requests/37
+
+#### Added preferences
+```
+defaultPref("services.settings.server", "https://%.invalid") // set the remote settings URL (REMOTE_SETTINGS_SERVER_URL in the code)
+```
 
 #### Removed preferences
 ```
@@ -573,7 +579,7 @@ pref("browser.urlbar.quicksuggest.scenario", ""); // disable firefox suggests an
 
 #### Commented preferences
 ```
-// pref("network.trr.mode", 2); // previously uncommented defaultPref with value 5 
+// pref("network.trr.mode", 2); // previously uncommented defaultPref with value 5
 // pref("network.trr.uri", "https://dns.quad9.net/dns-query"); // previously uncommented defaultPref with empty value
 ```
 
@@ -744,5 +750,5 @@ lockPref("privacy.override_rfp_for_color_scheme", false);
 
 **base librewolf version**: 89.x
 
-This is the initial release from which we start tagging and versioning settings. For previous changes see 
+This is the initial release from which we start tagging and versioning settings. For previous changes see
 [here](https://gitlab.com/librewolf-community/settings/-/blob/master/docs/changelog-legacy.md).
