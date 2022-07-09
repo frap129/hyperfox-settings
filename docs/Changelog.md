@@ -1,9 +1,27 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 6.6
+# 6.7
 
 **target commit**:
+
+**base librewolf version**: 103.x
+
+**References**:
+- the cookie lifetime policy pref has been deprecated, see https://gitlab.com/librewolf-community/settings/-/issues/199;
+- stop disabling IPv6, see https://gitlab.com/librewolf-community/settings/-/issues/96;
+- discussion about domain guessing is available at https://gitlab.com/librewolf-community/settings/-/issues/197.
+
+#### Removed preferences
+```
+defaultPref("network.cookie.lifetimePolicy", 2); // deprecated
+defaultPref("network.dns.disableIPv6", true);
+lockPref("browser.fixup.alternate.enabled", false);
+```
+
+# 6.6
+
+**target commit**: from bc16f4f14185e8791d819a69b7d798082ace67f8 to c983fcc8bea8fab31265bc345217b59ce5128de2
 
 **base librewolf version**: 102.x
 
