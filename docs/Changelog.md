@@ -10,11 +10,17 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 **References**:
 - the cookie lifetime policy pref has been deprecated, see https://gitlab.com/librewolf-community/settings/-/issues/199;
 - stop disabling IPv6, see https://gitlab.com/librewolf-community/settings/-/issues/96;
+- discussion about domain guessing is available at https://gitlab.com/librewolf-community/settings/-/issues/197.
 
 #### Removed preferences
 ```
 defaultPref("network.cookie.lifetimePolicy", 2); // deprecated
 defaultPref("network.dns.disableIPv6", true);
+```
+
+#### Unlocked preferences
+```
+defaultPref("browser.fixup.alternate.enabled", false); // default v104+
 ```
 
 # 6.6
