@@ -1,9 +1,28 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 6.7
+# 6.8
 
 **target commit**:
+
+**base librewolf version**: 103.x
+
+**References**:
+- [geoclue](https://github.com/arkenfox/user.js/issues/1504);
+
+#### Added preferences
+```
+defaultPref("geo.provider.use_geoclue", false); // [LINUX]
+```
+
+#### Removed preferences
+```
+defaultPref("network.cookie.cookieBehavior", 5); // default
+```
+
+# 6.7
+
+**target commit**: from e505ddbf0242aec1017a565a74ff9ff5aa458fe5 to 02212c3f44e7aa68b22c8febd9158580d7e4b74f
 
 **base librewolf version**: 103.x
 
