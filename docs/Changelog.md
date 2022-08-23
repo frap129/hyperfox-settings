@@ -1,9 +1,27 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 6.8
+# 6.9
 
 **target commit**:
+
+**base librewolf version**: 104.x
+
+**References**:
+- autofill prefs have been replaced in a migration, we now only keep the bare minimum;
+
+#### Removed preferences
+```
+defaultPref("browser.fixup.alternate.enabled", false); // default v104+
+defaultPref("browser.urlbar.dnsResolveSingleWordsAfterSearch", 0); // default v104+
+defaultPref("extensions.formautofill.available", "off"); // deprecated
+defaultPref("extensions.formautofill.creditCards.available", false); // deprecated
+defaultPref("extensions.formautofill.heuristics.enabled", false);
+```
+
+# 6.8
+
+**target commit**: 381cbed42c98d2376faf7e4ec449623bb99b0be1
 
 **base librewolf version**: 103.x
 
