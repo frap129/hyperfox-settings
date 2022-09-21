@@ -1,6 +1,21 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+# 6.10
+
+**target commit**:
+
+**base librewolf version**: 104.x
+
+**References**:
+
+- [enable APS](https://github.com/arkenfox/user.js/issues/1530#issuecomment-1242850653);
+
+#### Added preferences
+```
+defaultPref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
+```
+
 # 6.9
 
 **target commit**:
