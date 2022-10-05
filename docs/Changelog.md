@@ -1,19 +1,42 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 6.10
+# 7.0
 
 **target commit**:
 
-**base librewolf version**: 104.x
+**base librewolf version**: 105.x
 
 **References**:
 
 - [enable APS](https://github.com/arkenfox/user.js/issues/1530#issuecomment-1242850653);
+- trim unnecessary or default NTP prefs, tidy existing ones;
+- stick to default session restore interval for writes;
+- remove a bunch of default prefs that have been that way for the longest;
+- offer accessibility by default.
 
 #### Added preferences
 ```
 defaultPref("privacy.partition.always_partition_third_party_non_cookie_storage", true);
+defaultPref("privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage", false);
+```
+
+#### Removed preferences
+```
+defaultPref("browser.newtab.preload", false);
+lockPref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
+lockPref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
+lockPref("browser.newtabpage.activity-stream.feeds.snippets", false); // default
+lockPref("browser.newtabpage.activity-stream.feeds.system.topstories", false);
+defaultPref("browser.sessionstore.interval", 60000); // increase time between session saves
+defaultPref("network.http.windows-sso.enabled", false); // default
+defaultPref("privacy.partition.serviceWorkers", true); // default v105+
+defaultPref("accessibility.force_disabled", 1); // block accessibility services
+lockPref("toolkit.telemetry.shutdownPingSender.enabledFirstSession", false); // default
+lockPref("toolkit.telemetry.reportingpolicy.firstRun", false); // default
+defaultPref("network.http.referer.XOriginPolicy", 0); // default
+lockPref("browser.safebrowsing.passwords.enabled", false); // default
+lockPref("browser.safebrowsing.provider.google4.dataSharing.enabled", false); // default
 ```
 
 # 6.9
