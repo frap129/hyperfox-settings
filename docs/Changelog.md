@@ -10,10 +10,12 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 **References**:
 
 - [enable APS](https://github.com/arkenfox/user.js/issues/1530#issuecomment-1242850653);
-- trim unnecessary or default NTP prefs, tidy existing ones;
+- trim unnecessary or default NTP prefs, then tidy existing ones;
 - stick to default session restore interval for writes;
 - remove a bunch of default prefs that have been that way for the longest;
-- offer accessibility by default.
+- offer accessibility by default;
+- remove hardcore svg security pref since CVEs are very old and irrelevant, see [this discussion](https://github.com/arkenfox/user.js/issues/1529);
+- improve [autoplay behavior](https://gitlab.com/librewolf-community/settings/-/issues/213).
 
 #### Added preferences
 ```
@@ -37,11 +39,13 @@ lockPref("toolkit.telemetry.reportingpolicy.firstRun", false); // default
 defaultPref("network.http.referer.XOriginPolicy", 0); // default
 lockPref("browser.safebrowsing.passwords.enabled", false); // default
 lockPref("browser.safebrowsing.provider.google4.dataSharing.enabled", false); // default
+defaultPref("gfx.font_rendering.opentype_svg.enabled", false); // disale svg opentype fonts
+defaultPref("media.autoplay.blocking_policy", 2);
 ```
 
 # 6.9
 
-**target commit**:
+**target commit**: 49a705f835e1438372fbdf1a779fbc5846212a68
 
 **base librewolf version**: 104.x
 
