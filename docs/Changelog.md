@@ -1,9 +1,28 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+# 7.1
+
+**target commit**: 
+
+**base librewolf version**: 
+
+**References**:
+
+- change most `lockPref()` to `pref()` or `defaultPref()`, see https://gitlab.com/librewolf-community/settings/-/issues/204;
+- offline autodetection is mature enough and it is used by some APIs;
+- if someone wants to get the mozilla extension for USB debugging, that's fine.
+
+#### Removed preferences
+```
+defaultPref("network.manage-offline-status", false);
+defaultPref("devtools.remote.adb.extensionURL", "");
+defaultPref("devtools.chrome.enabled", false); // default
+```
+
 # 7.0
 
-**target commit**:
+**target commit**: from ed9334d258d20830deafe1a02b87b0cea678236d to 1bdfd333e31c3d119c0bf5506a56b2026ead3583
 
 **base librewolf version**: 105.x
 
