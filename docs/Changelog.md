@@ -10,7 +10,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 **References**:
 
 - hide Firefox View til reviewed, see https://gitlab.com/librewolf-community/browser/source/-/issues/78;
-- unlock setting version, to avoid file corruption;
+- hotfix for syntax error;
 
 #### Removed preferences
 
