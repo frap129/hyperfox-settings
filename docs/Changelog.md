@@ -5,11 +5,11 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 **target commit**: 
 
-**base librewolf version**: 
+**base librewolf version**: 106.x
 
 **References**:
 
-- 
+- hide Firefox View til reviewed, see https://gitlab.com/librewolf-community/browser/source/-/issues/78;
 
 #### Removed preferences
 
@@ -17,11 +17,17 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 defaultPref("browser.ssl_override_behavior", 1); // deprecated
 ```
 
+#### Added preferences
+
+```
+defaultPref("browser.tabs.firefox-view", false);
+```
+
 # 7.1
 
-**target commit**: 
+**target commit**: 33e1ec1cb97d1f16a696057fe9007ae8391def6b
 
-**base librewolf version**: 
+**base librewolf version**: 106.x
 
 **References**:
 
