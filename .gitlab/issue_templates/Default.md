@@ -19,7 +19,7 @@ https://librewolf.net/docs/faq/#i-have-a-problem-where-do-i-open-a-new-issue
 
 ### details
 - browser version & OS:
-- steps to reprouce:
+- steps to reproduce:
 - expected result:
 - actual result:
 - console errors and warnings:
