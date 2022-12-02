@@ -5,6 +5,25 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 **target commit**: 
 
+**base librewolf version**: 107.x
+
+**References**:
+
+- mixed content is already covered by HTTPS-only-mode;
+- [dom.disable_beforeunload is no longer necessary](https://github.com/arkenfox/user.js/issues/1575);
+
+#### Removed preferences
+
+```
+defaultPref("security.mixed_content.block_display_content", true); // block insecure passive content
+defaultPref("dom.disable_beforeunload", true);
+defaultPref("dom.disable_open_during_load", true); // default
+```
+
+# 7.2
+
+**target commit**: 
+
 **base librewolf version**: 106.x
 
 **References**:
