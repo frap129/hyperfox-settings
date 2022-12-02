@@ -3,7 +3,7 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 # 7.2
 
-**target commit**: 
+**target commit**: from 9395f5c0e061250acbcbcb523d2270d57136d411 to
 
 **base librewolf version**: 107.x
 
@@ -11,6 +11,8 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 
 - mixed content is already covered by HTTPS-only-mode;
 - [dom.disable_beforeunload is no longer necessary](https://github.com/arkenfox/user.js/issues/1575);
+- [beacon API is fine](https://gitlab.com/librewolf-community/settings/-/issues/229);
+- [Firefox Vew pref was removed in previous commit](https://gitlab.com/librewolf-community/settings/-/commit/9395f5c0e061250acbcbcb523d2270d57136d411), adding reference to the changelog;
 
 #### Removed preferences
 
@@ -18,11 +20,13 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 defaultPref("security.mixed_content.block_display_content", true); // block insecure passive content
 defaultPref("dom.disable_beforeunload", true);
 defaultPref("dom.disable_open_during_load", true); // default
+defaultPref("browser.tabs.firefox-view", false);
+pref("beacon.enabled", false);
 ```
 
 # 7.2
 
-**target commit**: 
+**target commit**: from 7211e954b82da3cde5c5cf2d613fe1f84288e635 to eb51b4785e5b67fc388bcbd06a8324d5a54f5850
 
 **base librewolf version**: 106.x
 
