@@ -1,0 +1,6 @@
+stages:
+  - dummy
+dummy-job:
+  stage: dummy
+  script:
+    - echo "Hello, world!"
