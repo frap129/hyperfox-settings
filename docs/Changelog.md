@@ -1,9 +1,25 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 7.2
+# 7.4
 
-**target commit**: from 9395f5c0e061250acbcbcb523d2270d57136d411 to
+**target commit**:
+
+**base librewolf version**: 108.x
+
+**References**:
+
+- win7/8.x don't need this pref thanks to Firefox's own implementation of mDNS.
+
+#### Removed preferences
+
+```
+defaultPref("media.peerconnection.ice.no_host", true); // don't use any private IPs for ICE candidate
+```
+
+# 7.3
+
+**target commit**: from 9395f5c0e061250acbcbcb523d2270d57136d411 to 240e184b785e4e46c09ca6881111f7c2d4d31a3f
 
 **base librewolf version**: 107.x
 
