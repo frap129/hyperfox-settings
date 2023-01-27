@@ -1,9 +1,25 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
-# 7.4
+# 7.5
 
 **target commit**:
+
+**base librewolf version**: 109.x
+
+**References**:
+
+- thumbnails are only used in privileged code to populate New Tab Page and Ctrl+Tab previews.
+
+#### Removed preferences
+
+```
+defaultPref("browser.pagethumbnails.capturing_disabled", true);
+```
+
+# 7.4
+
+**target commit**: b0d277a77b36e3bcc5c0f7a1b0eca7a54a388d9d
 
 **base librewolf version**: 108.x
 
