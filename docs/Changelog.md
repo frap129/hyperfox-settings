@@ -10,11 +10,13 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 **References**:
 
 - thumbnails are only used in privileged code to populate New Tab Page and Ctrl+Tab previews.
+- the startup blank window doesn't break anything and the perceived performance boost is irrelevant on modern hardware.
 
 #### Removed preferences
 
 ```
 defaultPref("browser.pagethumbnails.capturing_disabled", true);
+defaultPref("browser.startup.blankWindow", false);
 ```
 
 # 7.4
