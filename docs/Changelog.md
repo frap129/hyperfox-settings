@@ -1,11 +1,37 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+# 7.6
+
+**base librewolf version**: 111.x
+
+**References**:
+- the prefs added in the `LOGGING` section are off by default in the official Mozilla builds, so we are just acting like Firefox here;
+
+#### Removed preferences
+
+```
+defaultPref("browser.contentblocking.report.monitor.enabled", false); // default
+```
+
+#### Changed preferences
+
+```
+defaultPref("app.support.baseURL", "https://support.librewolf.net/");
+```
+
+#### Added preferences
+
+```
+pref("browser.dom.window.dump.enabled", false);
+pref("devtools.console.stdout.chrome", false);
+```
+
 # 7.5
 
-**target commit**:
+**target commit**: from 71a20c6fff90e7fbcb216f1d644ca1b40b32b8e2 to 6fe09c63cbfb83ebfb6a17f5e624248f2501b97e
 
-**base librewolf version**: 109.x
+**base librewolf version**: 109.x and 110.x
 
 **References**:
 
