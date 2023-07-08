@@ -1,9 +1,23 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+# 7.7
+
+**base librewolf version**: 115.x
+
+**References**:
+- https://gitlab.com/librewolf-community/settings/-/issues/262
+
+#### Added preferences
+
+```
+defaultPref("browser.urlbar.suggest.weather", false);
+defaultPref("extensions.quarantinedDomains.enabled", false);
+```
+
 # 7.6
 
-**base librewolf version**: 111.x
+**base librewolf version**: 111.x - 114.x
 
 **References**:
 - the prefs added in the `LOGGING` section are off by default in the official Mozilla builds, so we are just acting like Firefox here;
