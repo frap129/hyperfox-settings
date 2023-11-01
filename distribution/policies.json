@@ -88,7 +88,7 @@
         },
         "SupportMenu": {
             "Title": "LibreWolf Issue Tracker",
-            "URL": "https://gitlab.com/librewolf-community/settings/issues"
+            "URL": "https://codeberg.org/librewolf/issues"
         }
     }
 }
