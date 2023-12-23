@@ -1,9 +1,51 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+# 7.9
+
+**base librewolf version**: 121.x
+
+**References**:
+- Added 4get.ca to the list of default search engines - https://codeberg.org/librewolf/issues/issues/1711
+- Added default list of DoH providers containing Cloudflare and Quad9 - https://codeberg.org/librewolf/issues/issues/1683
+
+#### Added preferences
+
+```js
+pref("doh-rollout.provider-list", '[{"UIName":"Mozilla Cloudflare","uri":"https://mozilla.cloudflare-dns.com/dns-query"},{"UIName":"Quad9","uri":"https://dns.quad9.net/dns-query"}]');
+```
+
+# 7.8
+
+
+**base librewolf version**: 119.x - 120.x
+
+#### Changed preferences
+
+```diff
+-lockPref("security.family_safety.mode", 0); // disable win8.1 family safety cert
++lockPref("security.family_safety.mode", 2); // Remove pre-Win10-specific codepath
+``` 
+
+#### Added preferences
+
+```js
+defaultPref("network.dns.skipTRR-when-parental-control-enabled", false);  // Arkenfox user.js v117
+defaultPref("browser.search.separatePrivateDefault", true); // [FF70+] // Arkenfox user.js v119
+defaultPref("browser.search.separatePrivateDefault.ui.enabled", true); // [FF71+]  // Arkenfox user.js v119
+defaultPref("browser.urlbar.suggest.mdn", true);
+defaultPref("browser.urlbar.addons.featureGate", false);
+defaultPref("browser.urlbar.mdn.featureGate", false);
+defaultPref("browser.urlbar.pocket.featureGate", false);
+defaultPref("browser.urlbar.trending.featureGate", false);
+defaultPref("browser.urlbar.weather.featureGate", false);
+defaultPref("browser.download.start_downloads_in_tmp_dir", true); // Arkenfox user.js v118
+defaultPref("browser.shopping.experience2023.enabled", false); // Arkenfox user.js v118
+```
+
 # 7.7
 
-**base librewolf version**: 115.x
+**base librewolf version**: 115.x - 118.x
 
 **References**:
 - https://gitlab.com/librewolf-community/settings/-/issues/262
