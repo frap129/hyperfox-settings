@@ -11,9 +11,8 @@ Setting versions are documented using the pref `librewolf.cfg.version`, availabl
 #### Added preferences
 
 ```js
-pref("browser.shopping.experience2023.enabled", false);
-pref("browser.shopping.experience2023.opted", 2);
-pref("browser.shopping.experience2023.active", false);
+defaultPref("browser.shopping.experience2023.optedIn", 2);
+defaultPref("browser.shopping.experience2023.active", false);
 ```
 
 # 7.9
