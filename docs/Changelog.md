@@ -1,6 +1,21 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
 
+# 7.10
+
+**base librewolf version**: 122.x
+
+**References**:
+- Disabled the new Fakespot shopping sidebar
+
+#### Added preferences
+
+```js
+pref("browser.shopping.experience2023.enabled", false);
+pref("browser.shopping.experience2023.opted", 2);
+pref("browser.shopping.experience2023.active", false);
+```
+
 # 7.9
 
 **base librewolf version**: 121.x
