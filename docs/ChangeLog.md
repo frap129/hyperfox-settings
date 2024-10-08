@@ -1,5 +1,36 @@
 This changelog will be used from now on to document changes in a precise manner, with a list of changes for each setting version.
 Setting versions are documented using the pref `librewolf.cfg.version`, available in about:config.
+# 8.5
+
+* Explicitly disable weather feed in new tab page (ticket #2048)
+* Handle google safebrowsing stuff, ticket #1879
+
+# 8.4
+
+Changes to librewolf.cfg:
+
+DoH:
+
+* Disable DoH by default. The short of it is that we can't decide for the user which DoH server is best to use.
+* Provide much better default for when DoH is enabled. Mostly contributed by @Acideburn.
+
+Other:
+
+* [#69](https://codeberg.org/librewolf/settings/pulls/69) - DNS-over-HTTPS breaks IPv6 preference
+* [#71](https://codeberg.org/librewolf/settings/pulls/71) - initial ML setup
+
+To policies.json: 
+
+* Remove the DNSoverHTTP stuff from there as per Acideburn's find. We now disable it more visibly from the config file instead.
+
+# 8.3
+
+* Enable DoH by default, this caused unanticipated problems.
+* First version by @threadpanic, at Arkenfox v119, ships with LibreWolf v113.0-3.
+
+# 8.2
+
+- v7.10 was the last version by @fxbrit, at Arkenfox v119. This version ships with LibreWolf v113.0-1.
 
 # 7.10
 
