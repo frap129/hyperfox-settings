@@ -19,14 +19,12 @@
 ****************************************************************************/
 /** GENERAL ***/
 user_pref("content.notify.interval", 100000);
+user_pref("browser.cache.disk.enable", true);
 
 /** GFX ***/
 user_pref("gfx.canvas.accelerated.cache-items", 4096);
 user_pref("gfx.canvas.accelerated.cache-size", 512);
 user_pref("gfx.content.skia-font-cache-size", 20);
-
-/** DISK CACHE ***/
-user_pref("browser.cache.jsbc_compression_level", 3);
 
 /** MEDIA CACHE ***/
 user_pref("media.memory_cache_max_size", 65536);
@@ -43,6 +41,9 @@ user_pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
 user_pref("network.http.pacing.requests.enabled", false);
 user_pref("network.dnsCacheExpiration", 3600);
 user_pref("network.ssl_tokens_cache_capacity", 10240);
+user_pref("network.http.max-persistent-connections-per-server", 20); // increase download connections
+user_pref("network.buffer.cache.size", 262144); // default=32768; [WARNING] Cannot open HTML files bigger than 4 MB if changed
+user_pref("network.buffer.cache.count", 128); // default=24; use bigger packets
 
 /** SPECULATIVE LOADING ***/
 user_pref("network.dns.disablePrefetch", true);
@@ -63,7 +64,6 @@ user_pref("dom.security.sanitizer.enabled", true);
 user_pref("browser.contentblocking.category", "strict");
 user_pref("urlclassifier.trackingSkipURLs", "*.reddit.com, *.twitter.com, *.twimg.com, *.tiktok.com");
 user_pref("urlclassifier.features.socialtracking.skipURLs", "*.instagram.com, *.twitter.com, *.twimg.com");
-user_pref("network.cookie.sameSite.noneRequiresSecure", true);
 user_pref("browser.download.start_downloads_in_tmp_dir", true);
 user_pref("browser.helperApps.deleteTempFileOnExit", true);
 user_pref("browser.uitour.enabled", false);
@@ -82,6 +82,9 @@ user_pref("security.tls.enable_0rtt_data", false);
 /** DISK AVOIDANCE ***/
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
 user_pref("browser.sessionstore.interval", 60000);
+
+/** SANITIZE HISTORY ***/
+user_pref("browser.privatebrowsing.resetPBM.enabled", true);
 
 /** SHUTDOWN & SANITIZING ***/
 user_pref("privacy.history.custom", true);
@@ -191,7 +194,7 @@ user_pref("browser.display.focus_ring_on_anything", true);
 user_pref("browser.display.focus_ring_style", 0);
 user_pref("browser.display.focus_ring_width", 0);
 user_pref("layout.css.prefers-color-scheme.content-override", 2);
-user_pref("browser.privateWindowSeparation.enabled", false); // WINDOWS
+user_pref("layout.word_select.eat_space_to_next_word", false);
 
 /** COOKIE BANNER HANDLING ***/
 user_pref("cookiebanners.service.mode", 1);
@@ -242,6 +245,15 @@ user_pref("extensions.formautofill.creditCards.enabled", false);
 // PREF: require safe SSL negotiation
 // [ERROR] SSL_ERROR_UNSAFE_NEGOTIATION
 user_pref("security.ssl.require_safe_negotiation", true);
+
+// PREF: enable HTTPS-only Mode
+user_pref("dom.security.https_only_mode", true); // Normal + Private Browsing windows
+
+user_pref("browser.low_commit_space_threshold_mb", 13107); // determine when tabs unload
+user_pref("browser.low_commit_space_threshold_percent", 20); // determine when tabs unload (percentage)
+user_pref("network.trr.mode", 2); // enable TRR (with System fallback)
+user_pref("network.trr.max-fails", 5); // lower max attempts to use DoH
+user_pref("geo.provider.use_geoclue", false); // [LINUX]
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
