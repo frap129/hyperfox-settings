@@ -251,7 +251,6 @@ user_pref("dom.security.https_only_mode", true); // Normal + Private Browsing wi
 
 user_pref("browser.low_commit_space_threshold_mb", 13107); // determine when tabs unload
 user_pref("browser.low_commit_space_threshold_percent", 20); // determine when tabs unload (percentage)
-user_pref("network.trr.mode", 2); // enable TRR (with System fallback)
 user_pref("network.trr.max-fails", 5); // lower max attempts to use DoH
 user_pref("geo.provider.use_geoclue", false); // [LINUX]
 
