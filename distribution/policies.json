@@ -41,7 +41,8 @@
                 "Bing",
                 "Amazon.com",
                 "eBay",
-                "Twitter"
+                "Twitter",
+                "Perplexity"
             ],
             "Default": "DuckDuckGo",
             "Add": [
