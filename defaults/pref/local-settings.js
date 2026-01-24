@@ -7,4 +7,4 @@ pref("general.config.filename", "librewolf.cfg");
 pref("general.config.obscure_value", 0); 
 
 //This is currently needed for access to Components
-defaultPref("general.config.sandbox_enabled", false);
+pref("general.config.sandbox_enabled", false);
