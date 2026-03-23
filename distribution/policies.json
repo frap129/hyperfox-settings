@@ -23,6 +23,11 @@
             ]
         },
         "ExtensionSettings": {
+            "*": {
+                "blocked_install_message": "LibreWolf does not allow installing Language Packs.",
+                "installation_mode": "allowed",
+                "allowed_types": ["dictionary", "extension", "sitepermission", "theme"]
+            },
             "uBlock0@raymondhill.net": {
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpi",
                 "installation_mode": "normal_installed",
