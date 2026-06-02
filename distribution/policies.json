@@ -5,7 +5,6 @@
         "DisableAppUpdate": true,
         "OverrideFirstRunPage": "",
         "OverridePostUpdatePage": "",
-        "DisableSystemAddonUpdate": true,
         "DisableProfileImport": false,
         "DisableFirefoxStudies": true,
         "DisableTelemetry": true,
