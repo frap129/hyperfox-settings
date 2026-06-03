@@ -1,0 +1,4 @@
+* text=auto eol=lf
+
+*.cfg  linguist-language=JavaScript
+*.json linguist-detectable
