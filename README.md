@@ -11,13 +11,12 @@ This is now easier thanks to the [overrides](https://librewolf.net/docs/settings
 - [Website](https://librewolf.net): read the docs.
 - [FAQ](https://librewolf.net/docs/faq): for any question you might have,
 and to help you creating your own pref file.
-- [All releases](https://gitlab.com/librewolf-community/browser).
+- [All releases](https://codeberg.org/librewolf/bsys6/releases).
 - Find us on:
-  - [Gitter](https://gitter.im/librewolf-community/librewolf)
   - [Matrix](https://matrix.to/#/#librewolf:matrix.org)
   - [Reddit](https://www.reddit.com/r/LibreWolf)
   - [Lemmy](https://lemmy.ml/c/librewolf)
-  - [Mastodon](https://chaos.social/@librewolf).
+  - [Mastodon](https://chaos.social/@librewolf)
 
 ## Notes and thanks
 
