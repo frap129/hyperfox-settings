@@ -1,26 +1,78 @@
 {
     "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
     "policies": {
+        "AIChatbot": {
+            "Providers": {
+                "BuiltIn": {
+                    "Anthropic Claude": false,
+                    "ChatGPT": false,
+                    "Copilot": false,
+                    "Google Gemini": false,
+                    "HuggingChat": false,
+                    "Le Chat Mistral": false,
+                    "localhost": false
+                },
+            },
+            "Prompts": {
+                "Enabled": false,
+                "BuiltIn": {
+                    "Summarize": false,
+                    "Explain":  false,
+                    "Quiz": false,
+                    "Proofread": false
+                }
+            }
+        },
+        "AIControls": {
+            "Default": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "Translations": {
+                "Value": "available"
+            },
+            "PDFAltText": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "SmartTabGroups": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "LinkPreviewKeyPoints": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "SidebarChatbot": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "SmartWindow": {
+                "Value": "blocked",
+                "Locked": true
+            }
+        },
         "AppUpdateURL": "https://localhost",
-        "DisableAppUpdate": true,
-        "OverrideFirstRunPage": "",
-        "OverridePostUpdatePage": "",
-        "DisableProfileImport": false,
-        "DisableFirefoxStudies": true,
-        "DisableTelemetry": true,
-        "DisableFeedbackCommands": true,
-        "DisablePocket": true,
-        "DisableSetDesktopBackground": false,
-        "DisableDeveloperTools": false,
-        "NoDefaultBookmarks": true,
         "DefaultSerialGuardSetting": 3,
-        "WebsiteFilter": {
-            "Block": [
-                "https://localhost/*"
-            ],
-            "Exceptions": [
-                "https://localhost/*"
-            ]
+        "DisableAppUpdate": true,
+        "DisableDefaultBrowserAgent": true,
+        "DisableFeedbackCommands": true,
+        "DisableFirefoxStudies": true,
+        "DisableRemoteImprovements": true,
+        "DisableSetDesktopBackground": false,
+        "DisableTelemetry": true,
+        "DontCheckDefaultBrowser": true,
+        "EnableTrackingProtection": {
+            "Value": true,
+            "Cryptomining": true,
+            "Fingerprinting": true,
+            "EmailTracking": true,
+            "SuspectedFingerprinting": true,
+            "BaselineExceptions": true,
+            "ConvenienceExceptions": false
+        },
+        "EncryptedMediaExtensions": {
+            "Enabled": false
         },
         "ExtensionSettings": {
             "*": {
@@ -49,6 +101,27 @@
                 "installation_mode": "blocked"
             }
         },
+        "FirefoxHome": {
+            "SponsoredTopSites": false,
+            "Highlights": false,
+            "Pocket": false,
+            "Stories": false,
+            "SponsoredPocket": false,
+            "SponsoredStories": false
+        },
+        "FirefoxSuggest": {
+            "WebSuggestions": false,
+            "SponsoredSuggestions": false,
+            "ImproveSuggest": false
+        },
+        "HttpsOnlyMode": "enabled",
+        "LocalNetworkAccess": {
+            "Enabled": true,
+            "BlockTrackers": true,
+            "EnablePrompting": true
+        },
+        "NoDefaultBookmarks": true,
+        "OverridePostUpdatePage": "",
         "SearchEngines": {
             "PreventInstalls": false,
             "Remove": [
@@ -113,6 +186,14 @@
         "SupportMenu": {
             "Title": "LibreWolf Issue Tracker",
             "URL": "https://codeberg.org/librewolf/issues"
+        },
+        "UserMessaging": {
+            "ExtensionRecommendations": false,
+            "FeatureRecommendations": false,
+            "UrlbarInterventions": false,
+            "SkipOnboarding": true,
+            "MoreFromMozilla": false,
+            "FirefoxLabs": false
         }
     }
 }
