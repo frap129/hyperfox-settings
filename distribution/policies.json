@@ -1,28 +1,6 @@
 {
     "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
     "policies": {
-        "AIChatbot": {
-            "Providers": {
-                "BuiltIn": {
-                    "Anthropic Claude": false,
-                    "ChatGPT": false,
-                    "Copilot": false,
-                    "Google Gemini": false,
-                    "HuggingChat": false,
-                    "Le Chat Mistral": false,
-                    "localhost": false
-                },
-            },
-            "Prompts": {
-                "Enabled": false,
-                "BuiltIn": {
-                    "Summarize": false,
-                    "Explain":  false,
-                    "Quiz": false,
-                    "Proofread": false
-                }
-            }
-        },
         "AIControls": {
             "Default": {
                 "Value": "blocked",
@@ -102,11 +80,11 @@
             }
         },
         "FirefoxHome": {
+            "Weather": false,
+            "TopSites": false,
             "SponsoredTopSites": false,
             "Highlights": false,
-            "Pocket": false,
             "Stories": false,
-            "SponsoredPocket": false,
             "SponsoredStories": false
         },
         "FirefoxSuggest": {
@@ -188,8 +166,6 @@
             "URL": "https://codeberg.org/librewolf/issues"
         },
         "UserMessaging": {
-            "ExtensionRecommendations": false,
-            "FeatureRecommendations": false,
             "UrlbarInterventions": false,
             "SkipOnboarding": true,
             "MoreFromMozilla": false,
