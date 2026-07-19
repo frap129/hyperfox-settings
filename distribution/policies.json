@@ -40,15 +40,6 @@
         "DisableSetDesktopBackground": false,
         "DisableTelemetry": true,
         "DontCheckDefaultBrowser": true,
-        "EnableTrackingProtection": {
-            "Value": true,
-            "Cryptomining": true,
-            "Fingerprinting": true,
-            "EmailTracking": true,
-            "SuspectedFingerprinting": true,
-            "BaselineExceptions": true,
-            "ConvenienceExceptions": false
-        },
         "EncryptedMediaExtensions": {
             "Enabled": false
         },
