@@ -31,7 +31,6 @@
             }
         },
         "AppUpdateURL": "https://localhost",
-        "DefaultSerialGuardSetting": 3,
         "DisableAppUpdate": true,
         "DisableDefaultBrowserAgent": true,
         "DisableFeedbackCommands": true,
