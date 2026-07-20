@@ -2,10 +2,6 @@
     "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
     "policies": {
         "AIControls": {
-            "Default": {
-                "Value": "blocked",
-                "Locked": true
-            },
             "Translations": {
                 "Value": "available"
             },
