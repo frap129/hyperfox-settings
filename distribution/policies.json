@@ -1,26 +1,46 @@
 {
     "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
     "policies": {
+        "AIControls": {
+            "Default": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "Translations": {
+                "Value": "available"
+            },
+            "PDFAltText": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "SmartTabGroups": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "LinkPreviewKeyPoints": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "SidebarChatbot": {
+                "Value": "blocked",
+                "Locked": true
+            },
+            "SmartWindow": {
+                "Value": "blocked",
+                "Locked": true
+            }
+        },
         "AppUpdateURL": "https://localhost",
         "DisableAppUpdate": true,
-        "OverrideFirstRunPage": "",
-        "OverridePostUpdatePage": "",
-        "DisableProfileImport": false,
-        "DisableFirefoxStudies": true,
-        "DisableTelemetry": true,
+        "DisableDefaultBrowserAgent": true,
         "DisableFeedbackCommands": true,
-        "DisablePocket": true,
+        "DisableFirefoxStudies": true,
+        "DisableRemoteImprovements": true,
         "DisableSetDesktopBackground": false,
-        "DisableDeveloperTools": false,
-        "NoDefaultBookmarks": true,
-        "DefaultSerialGuardSetting": 3,
-        "WebsiteFilter": {
-            "Block": [
-                "https://localhost/*"
-            ],
-            "Exceptions": [
-                "https://localhost/*"
-            ]
+        "DisableTelemetry": true,
+        "DontCheckDefaultBrowser": true,
+        "EncryptedMediaExtensions": {
+            "Enabled": false
         },
         "ExtensionSettings": {
             "*": {
@@ -49,6 +69,27 @@
                 "installation_mode": "blocked"
             }
         },
+        "FirefoxHome": {
+            "Weather": false,
+            "TopSites": false,
+            "SponsoredTopSites": false,
+            "Highlights": false,
+            "Stories": false,
+            "SponsoredStories": false
+        },
+        "FirefoxSuggest": {
+            "WebSuggestions": false,
+            "SponsoredSuggestions": false,
+            "ImproveSuggest": false
+        },
+        "HttpsOnlyMode": "enabled",
+        "LocalNetworkAccess": {
+            "Enabled": true,
+            "BlockTrackers": true,
+            "EnablePrompting": true
+        },
+        "NoDefaultBookmarks": true,
+        "OverridePostUpdatePage": "",
         "SearchEngines": {
             "PreventInstalls": false,
             "Remove": [
@@ -113,6 +154,12 @@
         "SupportMenu": {
             "Title": "LibreWolf Issue Tracker",
             "URL": "https://codeberg.org/librewolf/issues"
+        },
+        "UserMessaging": {
+            "UrlbarInterventions": false,
+            "SkipOnboarding": true,
+            "MoreFromMozilla": false,
+            "FirefoxLabs": false
         }
     }
 }
