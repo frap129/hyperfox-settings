@@ -6,24 +6,19 @@
                 "Value": "available"
             },
             "PDFAltText": {
-                "Value": "blocked",
-                "Locked": true
+                "Value": "blocked"
             },
             "SmartTabGroups": {
-                "Value": "blocked",
-                "Locked": true
+                "Value": "blocked"
             },
             "LinkPreviewKeyPoints": {
-                "Value": "blocked",
-                "Locked": true
+                "Value": "blocked"
             },
             "SidebarChatbot": {
-                "Value": "blocked",
-                "Locked": true
+                "Value": "blocked"
             },
             "SmartWindow": {
-                "Value": "blocked",
-                "Locked": true
+                "Value": "blocked"
             }
         },
         "AppUpdateURL": "https://localhost",
